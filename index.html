@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .notification {
+        transition: opacity 0.5s ease; 
+    }
+    .notification.opacity-0 {
+        opacity: 0;
+    }
+    .notification.opacity-100 {
+        opacity: 1;
+    }
+</style>
+<body class="h-screen">
+
+    <div class="flex flex-col md:flex-row h-full">
+        
+      
+        <div class="md:w-1/2 h-full">
+            <img src="/assets/img/r3.jpeg" alt="Imagen Portada" class="w-full h-full object-cover">
+        </div>
+        
+     
+        <div class="md:w-1/2 h-full bg-gray-100 flex flex-col justify-center items-center p-8">
+            <h1 class="text-5xl font-bold mb-6 text-gray-800">Bienvenidos a Degustar Nuetras Delicias.....</h1>
+            <h3 class="text-2xl font-bold mb-6 text-gray-800">Comunicate con Nosotros</h3>
+            <div class="flex space-x-4">
+                <a href="/recepcion" class="bg-blue-500 text-white py-3 px-8 rounded-lg hover:bg-blue-600 transition">Recepción</a>
+                <a href="/nosotros" class="bg-gray-500 text-white py-3 px-8 rounded-lg hover:bg-gray-600 transition">Whattsapp</a>
+            </div>
+        </div>
+        
+
+    </div> 
+    <div class="bg-yellow-100">
+        <h1 class="text-6xl font-bold text-center py-16">Recomendado</h1>
+    </div>
+    <div class="bg-yellow-100">
+        <dl class="grid max-w-screen-xl grid-cols-1 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 dark:text-white sm:p-8">
+            <!-- Producto 1 -->
+            <div class="cargo border-double border-4 border-white border-red flex flex-col items-center justify-center p-2 bg-white rounded-lg shadow-md dark:bg-yellow-200">
+                <img src="/assets/img/r2.jpeg" alt="Helado de Mokasu" class="w-full h-60 mb-4 rounded-lg object-cover">
+                <dt class="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-700">Helado de Mokasu</dt>
+                <p class="text-yellow-400 mb-2">⭐⭐⭐</p>
+                <dd class="price text-lg text-gray-500 dark:text-gray-400 mb-4">Precio: <span class="price-value" data-price="5.00">5.00 Bs.</span></dd>
+                <div class="cargo flex items-center space-x-4 mb-4">
+                    <button onclick="decrementQuantity('product1')" class="px-3 py-1 text-lg font-bold text-white bg-yellow-400 rounded">-</button>
+                    <span id="quantity-product1" class="text-lg font-bold text-gray-900 dark:text-gray-600">1</span>
+                    <button onclick="incrementQuantity('product1')" class="px-3 py-1 text-lg font-bold text-white bg-yellow-600 rounded">+</button>
+                </div>
+                <button onclick="addToCart('product1', 5.00)" class="px-6 py-2 text-lg font-bold text-white bg-yellow-500 rounded hover:bg-yellow-700">Agregar al carrito</button>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="cargo border-double border-4 border-white border-red flex flex-col items-center justify-center p-2 bg-white rounded-lg shadow-md dark:bg-yellow-200">
+                <img src="/assets/img/r1.jpeg" alt="Helado de Sirvia Y Mrerengue" class="w-full h-60 mb-4 rounded-lg object-cover">
+                <dt class="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-700">Helado de Sirvia Y Mrerengue</dt>
+                <p class="text-yellow-400 mb-2">⭐⭐⭐⭐</p>
+                <dd class="price text-lg text-gray-500 dark:text-gray-400 mb-4">Precio: <span class="price-value" data-price="8.00">8.00 Bs.</span></dd>
+                <div class="cargo flex items-center space-x-4 mb-4">
+                    <button onclick="decrementQuantity('product2')" class="px-3 py-1 text-lg font-bold text-white bg-yellow-400 rounded">-</button>
+                    <span id="quantity-product2" class="text-lg font-bold text-gray-900 dark:text-gray-600">1</span>
+                    <button onclick="incrementQuantity('product2')" class="px-3 py-1 text-lg font-bold text-white bg-yellow-600 rounded">+</button>
+                </div>
+                <button onclick="addToCart('product2', 8.00)" class="px-6 py-2 text-lg font-bold text-white bg-yellow-500 rounded hover:bg-yellow-700">Agregar al carrito</button>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="cargo border-double border-4 border-white border-red flex flex-col items-center justify-center p-2 bg-white rounded-lg shadow-md dark:bg-yellow-200">
+                <img src="/assets/img/r3.jpeg" alt="Arroz con leche" class="w-full h-60 mb-4 rounded-lg object-cover">
+                <dt class="mb-2 text-xl font-extrabold text-gray-900 dark:text-gray-700">Arroz con leche</dt>
+                <p class="text-yellow-400 mb-2">⭐⭐⭐⭐⭐</p>
+                <dd class="price text-lg text-gray-500 dark:text-gray-400 mb-4">Precio: <span class="price-value" data-price="10.00">10.00 Bs.</span></dd>
+                <div class="cargo flex items-center space-x-4 mb-4">
+                    <button onclick="decrementQuantity('product3')" class="px-3 py-1 text-lg font-bold text-white bg-yellow-400 rounded">-</button>
+                    <span id="quantity-product3" class="text-lg font-bold text-gray-900 dark:text-gray-600">1</span>
+                    <button onclick="incrementQuantity('product3')" class="px-3 py-1 text-lg font-bold text-white bg-yellow-600 rounded">+</button>
+                </div>
+                <button onclick="addToCart('product3', 10.00)" class="px-6 py-2 text-lg font-bold text-white bg-yellow-500 rounded hover:bg-yellow-700">Agregar al carrito</button>
+            </div>
+        </dl>
+
+        <div id="cart-notification" class="notification fixed top-10 right-10 bg-yellow-300 text-gray-700 px-4 py-2 font-bold rounded-lg shadow-lg opacity-0 transition-opacity duration-500 hidden">
+            <p id="cart-details"></p>
+            <p id="cart-total" class="mt-4">Total del pedido: 0 Bs.</p>
+            <div class="flex mt-4 space-x-2">
+                <button onclick="saveOrder()" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Guardar</button>
+                <button onclick="cancelOrder()" class="px-4 py-2 bg-red-500 text-white rounded-lg">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <div class="min-h-screen bg-yellow-50  p-4 md:px-16 clear-both  items-center justify-center ">
+        <h1 class="text-6xl font-bold text-center pb-16 ">Clientes Satisfechos...</h1>
+        <div class="grid mb-8 border  rounded-lg shadow-sm border-yellow-700 md:mb-12 md:grid-cols-2 bg-yellow-200">
+            <figure class="flex flex-col items-center justify-center p-8 text-center  border-b border-yellow-400 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e bg-yellow-200">
+                <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Un Viaje de Sabores</h3>
+                    <p class="my-4">¡Felicitaciones por tu elección de helados! Explora las diversas combinaciones de sabores que ofrecen las heladerías artesanales. Desde clásicos como chocolate y vainilla hasta sabores más atrevidos como lavanda o chile, cada cucharada es una nueva aventura para tu paladar."</p>
+                </blockquote>
+                <figcaption class="flex items-center justify-center ">
+                    <img class="rounded-full w-16 h-16" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
+                    <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                        <div>Bonnie Green mendoza</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 ">Cliente Frecuente</div>
+                    </div>
+                </figcaption>    
+            </figure>
+            <figure class="flex flex-col items-center justify-center p-8 text-center  border-b border-yellow-400 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e bg-yellow-200 ">
+                <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Helado Saludable</h3>
+                    <p class="my-4">¡Bien hecho por optar por helados más saludables! Prueba opciones hechas con ingredientes naturales y bajos en azúcar. Muchos helados ahora incorporan frutas frescas, yogur o leches vegetales, permitiéndote disfrutar de un delicioso postre sin culpa."</p>
+                </blockquote>
+                <figcaption class="flex items-center justify-center ">
+                    <img class="rounded-full w-16 h-16" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture">
+                    <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                        <div>Virginia Suarez Mariategui</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 ">Cliente Frecuente</div>
+                    </div>
+                </figcaption>    
+            </figure>
+            <figure class="flex flex-col items-center justify-center p-8 text-center  border-b border-yellow-400 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e bg-yellow-200 ">
+                <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Momentos para Compartir</h3>
+                    <p class="my-4">¡Felicidades por elegir helados como el postre perfecto para compartir! Reúne a amigos y familiares para disfrutar de un buen helado. No hay nada mejor que una bola de helado para crear momentos memorables y risas en buena compañía."</p>
+                </blockquote>
+                <figcaption class="flex items-center justify-center ">
+                    <img class="rounded-full w-16 h-16" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="profile picture">
+                    <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                        <div>Artudo Monje Campero</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 ">Alcade de namecusein</div>
+                    </div>
+                </figcaption>    
+            </figure>
+            <figure class="flex flex-col items-center justify-center p-8 text-center  border-b border-yellow-400 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e bg-yellow-200 ">
+                <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">La Magia del Helado Artesanal</h3>
+                    <p class="my-4">¡Enhorabuena por descubrir el helado artesanal! Cada bocado refleja el esfuerzo y la pasión de los heladeros. Prueba sabores únicos y experimentales que no encontrarás en helados comerciales; cada visita a la heladería puede ser una nueva experiencia gustativa."</p>
+                </blockquote>
+                <figcaption class="flex items-center justify-center ">
+                    <img class="rounded-full w-16 h-16" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture">
+                    <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                        <div>Goku Mendoza Medallo</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 ">Cliente Eximido</div>
+                    </div>
+                </figcaption>    
+            </figure>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    
+    <script>
+        let cart = {};  
+      
+        function incrementQuantity(product) {
+          const quantitySpan = document.getElementById(`quantity-${product}`);
+          let quantity = parseInt(quantitySpan.textContent);
+          quantity++;
+          quantitySpan.textContent = quantity;
+          updateTotal(product);
+        }
+      
+        function decrementQuantity(product) {
+          const quantitySpan = document.getElementById(`quantity-${product}`);
+          let quantity = parseInt(quantitySpan.textContent);
+          if (quantity > 1) {
+            quantity--;
+            quantitySpan.textContent = quantity;
+            updateTotal(product);
+          }
+        }
+      
+        function updateTotal(product) {
+          const price = parseFloat(document.querySelector(`#total-${product}`).previousElementSibling.querySelector('.price-value').dataset.price);
+          const quantity = parseInt(document.getElementById(`quantity-${product}`).textContent);
+          const totalElement = document.getElementById(`total-${product}`);
+          totalElement.textContent = `${(price * quantity).toFixed(2)} Bs.`;
+        }
+      
+        function addToCart(product, price) {
+          const quantity = parseInt(document.getElementById(`quantity-${product}`).textContent);
+          cart[product] = { price, quantity };
+          showNotification();
+        }
+      
+        function showNotification() {
+          const notification = document.getElementById('cart-notification');
+          notification.classList.remove('hidden');
+          notification.classList.add('opacity-100');
+      
+          let cartDetails = '';
+          let totalPrice = 0;
+      
+          for (const product in cart) {
+            const { price, quantity } = cart[product];
+            cartDetails += `${product}: ${quantity} x ${price} Bs.\n`;
+            totalPrice += price * quantity;
+          }
+      
+          document.getElementById('cart-details').textContent = cartDetails;
+          document.getElementById('cart-total').textContent = `Total del pedido: ${totalPrice.toFixed(2)} Bs.`;
+        }
+      
+        function saveOrder() {
+          alert('Pedido guardado con éxito');
+          clearCart();
+        }
+      
+        function cancelOrder() {
+          clearCart();
+        }
+      
+        function clearCart() {
+          cart = {};
+          document.getElementById('cart-details').textContent = '';
+          document.getElementById('cart-total').textContent = 'Total del pedido: 0 Bs.';
+          document.getElementById('cart-notification').classList.add('opacity-0');
+          setTimeout(() => document.getElementById('cart-notification').classList.add('hidden'), 500);
+        }
+    </script>
+</body>
+</html>
